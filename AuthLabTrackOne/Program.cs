@@ -1,7 +1,13 @@
+using AuthLabTrackOne.DataAccess;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AuthLabTrackOneContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("AuthLabTrackOneDB")).UseSnakeCaseNamingConvention());
 
 var app = builder.Build();
 

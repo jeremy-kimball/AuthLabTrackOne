@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AuthLabTrackOneContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("AuthLabTrackOneDb")).UseSnakeCaseNamingConvention());
+    options.UseNpgsql(builder.Configuration.GetConnectionString("AuthLabTrackOneDB")).UseSnakeCaseNamingConvention());
 
 var app = builder.Build();
 
